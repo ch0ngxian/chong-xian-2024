@@ -4,6 +4,7 @@ import AboutMe from "./sections/AboutMe";
 import Works from "./sections/Works";
 import Blogs from "./sections/Blogs";
 import Contacts from "./sections/Contacts";
+import Processes from "./sections/Processes";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Header />
       <main>
         <AboutMe />
+        <Processes />
         <Works />
         <Blogs />
         <ThingsILove />
