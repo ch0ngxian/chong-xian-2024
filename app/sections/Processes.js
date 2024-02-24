@@ -62,7 +62,8 @@ export default function Processes() {
           {sections.map((section, index) => (
             <div
               key={index}
-              className={`cursor-pointer text-5xl font-bold my-6 ${activeSectionIndex == index ? `text-[${section.color}]` : "text-gray-200"}`}
+              className={`cursor-pointer text-5xl font-bold my-6 text-gray-200`}
+              style={{ color: activeSectionIndex == index ? section.color : "" }}
               onClick={() => setActiveSectionIndex(index)}
             >
               {section.title}
@@ -82,8 +83,18 @@ export default function Processes() {
         {sections.map((section, index) => (
           <div
             key={index}
-            className={`mr-10 bg-[${section.image.background_color}] rounded-lg border border-[${section.image.border_color}] absolute transition-opacity duration-500`}
-            style={{ opacity: activeSectionIndex == index ? 1 : 0 }}
+            className={`mr-10 rounded-lg border absolute transition-opacity duration-500`}
+            style={
+              activeSectionIndex == index
+                ? {
+                    opacity: 1,
+                    background: section.image.background_color,
+                    borderColor: section.image.border_color,
+                  }
+                : {
+                    opacity: 0,
+                  }
+            }
           >
             <Image width={1024} height={1024} style={{ width: "100%", height: "auto" }} src={section.image.src} alt={section.image.alt} />
           </div>
