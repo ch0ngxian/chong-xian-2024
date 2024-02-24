@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Processes() {
   const sections = [
@@ -47,6 +47,13 @@ export default function Processes() {
   ];
   const [activeSectionIndex, setActiveSectionIndex] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSectionIndex((activeSectionIndex + 1) % sections.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [activeSectionIndex, sections.length]);
+
   return (
     <section className="mx-10 my-10 pt-10 flex justify-between h-screen box-content">
       <div className="w-[40%] pr-10 mt-20">
@@ -71,19 +78,16 @@ export default function Processes() {
           ))}
         </div>
       </div>
-      <div className="w-[60%]">
-        <div
-          className={`bg-[${sections[activeSectionIndex].image.background_color}] rounded-lg border border-[${sections[activeSectionIndex].image.border_color}] h-fit`}
-        >
-          <Image
-            className="mb-2"
-            width={1024}
-            height={1024}
-            style={{ width: "100%", height: "auto" }}
-            src={sections[activeSectionIndex].image.src}
-            alt={sections[activeSectionIndex].image.alt}
-          />
-        </div>
+      <div className="w-[60%] box-border">
+        {sections.map((section, index) => (
+          <div
+            key={index}
+            className={`mr-10 bg-[${section.image.background_color}] rounded-lg border border-[${section.image.border_color}] absolute transition-opacity duration-500`}
+            style={{ opacity: activeSectionIndex == index ? 1 : 0 }}
+          >
+            <Image width={1024} height={1024} style={{ width: "100%", height: "auto" }} src={section.image.src} alt={section.image.alt} />
+          </div>
+        ))}
       </div>
     </section>
   );
