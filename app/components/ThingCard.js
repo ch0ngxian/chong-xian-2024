@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function ThingCard({ filename }) {
+export default function ThingCard({ title, description, url, image_url }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -16,13 +16,12 @@ export default function ThingCard({ filename }) {
         setIsHovered(false);
       }}
     >
-      <div
-        className="absolute left-0 right-0 top-0 bottom-0 m-auto w-60 h-10 font-medium text-lg text-white transition-opacity z-50"
-        style={{ opacity: isHovered ? 1 : 0 }}
-      >
-        {filename}
+      <div className="absolute left-5 bottom-5 m-auto text-white transition-opacity z-50" style={{ opacity: isHovered ? 1 : 0 }}>
+        <div className="font-medium text-lg ">{title}</div>
+        {description && <div className="font-light">{description}</div>}
       </div>
-      <Image key={filename} width={512} height={512} style={{ width: "100%", height: "auto" }} src={`/images/things-i-love/${filename}`} alt="" />
+
+      <Image key={title} width={512} height={512} style={{ width: "100%", height: "auto" }} src={image_url} alt="" />
     </div>
   );
 }
