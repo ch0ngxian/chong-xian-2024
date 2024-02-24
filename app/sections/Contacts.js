@@ -18,7 +18,7 @@ export default async function Contacts() {
             {[
               {
                 name: "linkedin",
-                url: "https://www.linkedin.com/in/chongxian-goh-4a8b4b1b5/",
+                url: "https://www.linkedin.com/in/chongxian/",
               },
               {
                 name: "facebook",
@@ -26,14 +26,18 @@ export default async function Contacts() {
               },
               {
                 name: "github",
-                url: "",
+                url: "https://github.com/ch0ngxian",
               },
               {
                 name: "medium",
-                url: "",
+                url: "https://medium.com/@ch0ngx1an",
               },
             ].map((platform) => {
-              return <Image className="h-12 w-12" key={platform.name} width={512} height={512} src={`/images/${platform.name}.svg`} alt="" />;
+              return (
+                <a key={platform.name} href={platform.url} target="_blank">
+                  <Image className="h-12 w-12" width={512} height={512} src={`/images/${platform.name}.svg`} alt="" />
+                </a>
+              );
             })}
           </div>
         </div>
