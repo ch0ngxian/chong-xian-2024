@@ -11,6 +11,12 @@ export default function Processes() {
       color: "#9747FF",
       description: "Passionate on drawing clean UI design and provide easy to use experience",
       tags: ["Figma"],
+      image: {
+        src: "/images/processes/design.png",
+        alt: "Design",
+        border_color: "#DBBFFF",
+        background_color: "#FCFAFF",
+      },
     },
     {
       title: "Develop",
@@ -18,6 +24,12 @@ export default function Processes() {
       color: "#0085FF",
       description: "Solve and implement the solution that performance optimised",
       tags: ["Vue.js", "React", "Laravel", "Ruby on Rails", "MySQL", "AWS"],
+      image: {
+        src: "/images/processes/develop.png",
+        alt: "Develop",
+        border_color: "#85C5FF",
+        background_color: "#E9F5FF",
+      },
     },
     {
       title: "Empower",
@@ -25,15 +37,20 @@ export default function Processes() {
       color: "#E19A0B",
       description: "Empower the team with the right tools and knowledge",
       tags: ["Scrum", "Communication", "Leadership"],
+      image: {
+        src: "/images/processes/empower.png",
+        alt: "Empower",
+        border_color: "#FFE28C",
+        background_color: "#FFFCF2",
+      },
     },
   ];
   const [activeSectionIndex, setActiveSectionIndex] = useState(0);
 
   return (
-    <section className="mx-10 my-10 flex justify-between items-center h-screen">
-      <div className="flex flex-col justify-center">
+    <section className="mx-10 my-10 pt-10 flex justify-between h-screen box-content">
+      <div className="w-[40%] pr-10 mt-20">
         <h1 className="text-xl">In my daily work, I do</h1>
-
         <div className="my-5">
           {sections.map((section, index) => (
             <div
@@ -45,55 +62,28 @@ export default function Processes() {
             </div>
           ))}
         </div>
-        <div className="text-xl mt-10">Passionate on drawing clean UI design and provide easy to use experience</div>
-        <div className="mt-5">
-          <div className="px-5 py-1 rounded-full bg-gray-200 w-fit">Figma</div>
+        <div className="text-xl mt-10">{sections[activeSectionIndex].description}</div>
+        <div className="mt-5 flex flex-wrap">
+          {sections[activeSectionIndex].tags.map((tag, index) => (
+            <div key={index} className="px-5 py-1 rounded-full bg-gray-200 w-fit mr-2 mb-3">
+              {tag}
+            </div>
+          ))}
         </div>
       </div>
-      <div className="w-6/11">
-        {sections[activeSectionIndex].type == "design" && (
-          <div className="bg-[#FCFAFF] ml-10 rounded-lg border border-[#DBBFFF] h-fit relative z-[-1]">
-            <Image
-              className="mb-2"
-              width={1024}
-              height={1024}
-              style={{ width: "100%", height: "auto" }}
-              src={`/images/processes/design.png`}
-              alt=""
-            />
-            <div
-              className="w-10/12 h-1/2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center -z-10"
-              style={{
-                borderRadius: "60rem",
-                background: "radial-gradient(50% 50% at 50% 50%, #E4D0FF 43%, rgba(255, 255, 255, 0.00) 100%)",
-              }}
-            ></div>
-          </div>
-        )}
-        {sections[activeSectionIndex].type == "develop" && (
-          <div className="bg-[#E9F5FF] ml-10 rounded-lg border border-[#85C5FF] h-fit">
-            <Image
-              className="mb-2"
-              width={1024}
-              height={1024}
-              style={{ width: "100%", height: "auto" }}
-              src={`/images/processes/develop.png`}
-              alt=""
-            />
-          </div>
-        )}
-        {sections[activeSectionIndex].type == "empower" && (
-          <div className="bg-[#FFFCF2] ml-10 rounded-lg border border-[#FFE28C] h-fit">
-            <Image
-              className="mb-2"
-              width={1024}
-              height={1024}
-              style={{ width: "100%", height: "auto" }}
-              src={`/images/processes/empower.png`}
-              alt=""
-            />
-          </div>
-        )}
+      <div className="w-[60%]">
+        <div
+          className={`bg-[${sections[activeSectionIndex].image.background_color}] rounded-lg border border-[${sections[activeSectionIndex].image.border_color}] h-fit`}
+        >
+          <Image
+            className="mb-2"
+            width={1024}
+            height={1024}
+            style={{ width: "100%", height: "auto" }}
+            src={sections[activeSectionIndex].image.src}
+            alt={sections[activeSectionIndex].image.alt}
+          />
+        </div>
       </div>
     </section>
   );
