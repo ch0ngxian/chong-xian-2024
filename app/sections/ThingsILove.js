@@ -34,21 +34,21 @@ export default async function ThingsILove() {
     },
     {
       title: "Go kart",
-      description: "Sports",
+      description: "Sport that I love to play with friends",
       image_url: "/images/things-i-love/go-kart.png",
     },
     {
       title: "Interstellar",
-      description: "Movie",
+      description: "Favorite movie",
       image_url: "/images/things-i-love/interstellar.png",
     },
     {
       title: "Lany",
-      description: "Music",
+      description: "Best roadtrip music band",
       image_url: "/images/things-i-love/lany.png",
     },
     {
-      title: "Us",
+      title: "🧑🏻❤️👩🏻",
       description: "Trip to Langkawi Island, Malaysia",
       image_url: "/images/things-i-love/us.png",
     },
@@ -64,7 +64,7 @@ export default async function ThingsILove() {
     },
     {
       title: "Tesla",
-      description: "Car",
+      description: "Loving the tech and the revolution it brings to the world",
       image_url: "/images/things-i-love/tesla.png",
     },
   ];

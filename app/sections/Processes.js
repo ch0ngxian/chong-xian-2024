@@ -55,8 +55,8 @@ export default function Processes() {
   }, [activeSectionIndex, sections.length]);
 
   return (
-    <section className="mx-10 my-10 pt-10 flex justify-between h-screen box-content">
-      <div className="w-[40%] pr-10 mt-20">
+    <section className="mx-6 md:mx-10 my-10 pt-10 flex flex-col-reverse md:flex-row justify-between h-screen box-content">
+      <div className="md:w-[40%] md:pr-10 md:mt-20">
         <h1 className="text-xl">In my daily work, I do</h1>
         <div className="my-5">
           {sections.map((section, index) => (
@@ -79,11 +79,11 @@ export default function Processes() {
           ))}
         </div>
       </div>
-      <div className="w-[60%] box-border">
+      <div className="md:w-[60%] box-border">
         {sections.map((section, index) => (
           <div
             key={index}
-            className={`mr-10 rounded-lg border absolute transition-opacity duration-500`}
+            className={`mr-6 md:mr-10 rounded-lg border absolute transition-opacity duration-500`}
             style={
               activeSectionIndex == index
                 ? {
