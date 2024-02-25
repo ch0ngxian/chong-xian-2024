@@ -7,19 +7,19 @@ import MediumIcon from "../components/icon/MediumIcon";
 
 export default async function Contacts() {
   return (
-    <section className="mx-10 min-h-screen flex flex-col justify-end">
+    <section className="mx-6 md:mx-10 min-h-screen flex flex-col justify-end">
       <div className="mb-10">
-        <span className="text-8xl">👋</span>
+        <span className="text-6xl md:text-8xl">👋</span>
         <div className="mt-5">
-          <span className="text-6xl font-medium">Get in touch</span>
-          <p className="text-5xl mt-2 text-gray-400">Feel free to contact me</p>
+          <span className="text-4xl md:text-6xl font-medium">Get in touch</span>
+          <p className="text-3xl md:text-5xl mt-2 text-gray-400">Feel free to contact me</p>
         </div>
-        <div className="flex justify-between mt-10">
+        <div className="flex justify-between mt-10 flex-col md:flex-row">
           <div className="cursor-pointer flex items-center gap-3 hover:text-gray-500">
             <MailIcon className="h-10 w-10" />
-            <span className="text-3xl">chongxian.goh@gmail.com</span>
+            <span className="text-2xl md:text-3xl">chongxian.goh@gmail.com</span>
           </div>
-          <div className="flex gap-5">
+          <div className="flex flex-wrap gap-5 mt-5">
             <a href="https://www.linkedin.com/in/chongxian/" target="_blank">
               <LinkedinIcon className="h-12 w-12 hover:text-gray-500" />
             </a>

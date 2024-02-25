@@ -7,7 +7,7 @@ export default async function AboutMe() {
   const imageFilenames = await fs.readdir(imageDirectory);
 
   return (
-    <section className="mx-10 min-h-screen flex flex-col">
+    <section className="mx-6 md:mx-10 min-h-screen flex flex-col">
       <div className="flex flex-col justify-between grow mt-52 mb-10">
         <div className="inline-flex flex-col gap-2">
           <h1 className="text-6xl font-medium">Hi, I am Chong Xian</h1>
