@@ -1,5 +1,9 @@
 import Image from "next/image";
 import MailIcon from "../components/icon/MailIcon";
+import LinkedinIcon from "../components/icon/LinkedinIcon";
+import FacebookIcon from "../components/icon/FacebookIcon";
+import GithubIcon from "../components/icon/GithubIcon";
+import MediumIcon from "../components/icon/MediumIcon";
 
 export default async function Contacts() {
   return (
@@ -16,30 +20,18 @@ export default async function Contacts() {
             <span className="text-3xl">chongxian.goh@gmail.com</span>
           </div>
           <div className="flex gap-5">
-            {[
-              {
-                name: "linkedin",
-                url: "https://www.linkedin.com/in/chongxian/",
-              },
-              {
-                name: "facebook",
-                url: "https://www.facebook.com/chongxian.goh",
-              },
-              {
-                name: "github",
-                url: "https://github.com/ch0ngxian",
-              },
-              {
-                name: "medium",
-                url: "https://medium.com/@ch0ngx1an",
-              },
-            ].map((platform) => {
-              return (
-                <a key={platform.name} href={platform.url} target="_blank">
-                  <Image className="h-12 w-12 hover:text-gray-500" width={512} height={512} src={`/images/${platform.name}.svg`} alt="" />
-                </a>
-              );
-            })}
+            <a href="https://www.linkedin.com/in/chongxian/" target="_blank">
+              <LinkedinIcon className="h-12 w-12 hover:text-gray-500" />
+            </a>
+            <a href="https://www.facebook.com/chongxian.goh" target="_blank">
+              <FacebookIcon className="h-12 w-12 hover:text-gray-500" />
+            </a>
+            <a href="https://github.com/ch0ngxian" target="_blank">
+              <GithubIcon className="h-12 w-12 hover:text-gray-500" />
+            </a>
+            <a href="https://medium.com/@ch0ngx1an" target="_blank">
+              <MediumIcon className="h-12 w-12 hover:text-gray-500" />
+            </a>
           </div>
         </div>
       </div>
