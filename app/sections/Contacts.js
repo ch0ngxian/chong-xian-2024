@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MailIcon from "../components/icon/MailIcon";
 
 export default async function Contacts() {
   return (
@@ -10,8 +11,8 @@ export default async function Contacts() {
           <p className="text-5xl mt-2 text-gray-400">Feel free to contact me</p>
         </div>
         <div className="flex justify-between mt-10">
-          <div className="flex items-center gap-3">
-            <Image className="h-10 w-10" width={512} height={512} src={`/images/mail.svg`} alt="" />
+          <div className="cursor-pointer flex items-center gap-3 hover:text-gray-500">
+            <MailIcon className="h-10 w-10" />
             <span className="text-3xl">chongxian.goh@gmail.com</span>
           </div>
           <div className="flex gap-5">
@@ -35,7 +36,7 @@ export default async function Contacts() {
             ].map((platform) => {
               return (
                 <a key={platform.name} href={platform.url} target="_blank">
-                  <Image className="h-12 w-12" width={512} height={512} src={`/images/${platform.name}.svg`} alt="" />
+                  <Image className="h-12 w-12 hover:text-gray-500" width={512} height={512} src={`/images/${platform.name}.svg`} alt="" />
                 </a>
               );
             })}
