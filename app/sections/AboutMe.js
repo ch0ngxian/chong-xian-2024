@@ -8,13 +8,15 @@ export default async function AboutMe() {
 
   return (
     <section className="mx-6 md:mx-10 min-h-screen flex flex-col">
-      <div className="flex flex-col justify-between grow mt-52 mb-10">
+      <div className="flex flex-col justify-between grow mt-44 lg:mt-52 mb-10">
         <div className="inline-flex flex-col gap-2">
-          <h1 className="text-6xl font-medium">Hi, I am Chong Xian</h1>
-          <span className="text-4xl font-light">I design and develop nice product.</span>{" "}
+          <h1 className="text-5xl md:text-6xl font-medium">
+            Hi, I am <br className="inline md:hidden" /> Chong Xian
+          </h1>
+          <span className="mt-3 mb-10 md:mt-auto text-3xl md:text-5xl font-light">I design and develop nice product.</span>{" "}
         </div>
         <div className="flex justify-between items-end">
-          <div className="text-2xl">
+          <div className="text-xl md:text-2xl">
             Multi-hypernate <br /> Software Engineers
           </div>
           <div className="text-right">

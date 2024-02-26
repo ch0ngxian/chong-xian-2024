@@ -71,7 +71,7 @@ export default async function ThingsILove() {
   return (
     <section className="mx-6 md:mx-10">
       <h3 className="text-3xl font-medium mb-5">Things I love</h3>
-      <div className="columns-2 gap-5 md:columns-3 md:gap-8 [&>div:not(:first-child)]:mt-8">
+      <div className="columns-2 gap-5 md:columns-3 md:gap-8 lg:columns-4 [&>div:not(:first-child)]:mt-8">
         {things.map((thing, index) => {
           return <ThingCard key={index} title={thing.title} description={thing.description} image_url={thing.image_url} />;
         })}

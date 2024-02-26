@@ -7,7 +7,7 @@ import MediumIcon from "../components/icon/MediumIcon";
 
 export default async function Contacts() {
   return (
-    <section className="mx-6 md:mx-10 min-h-screen flex flex-col justify-end">
+    <section className="mx-6 md:mx-10 h-[75vh] md:min-h-screen flex flex-col justify-end">
       <div className="mb-10">
         <span className="text-6xl md:text-8xl">👋</span>
         <div className="mt-5">
