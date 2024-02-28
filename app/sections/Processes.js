@@ -113,7 +113,7 @@ export default function Processes() {
         {sections.map((section, index) => (
           <div
             key={index}
-            className={`${activeSectionIndex == index ? "" : "hidden"} cursor-pointer text-4xl font-bold mt-3 mb-6 text-gray-200`}
+            className={`${activeSectionIndex == index ? "" : "hidden"} cursor-pointer text-4xl font-bold mt-1 mb-6 text-gray-200`}
             style={{ color: activeSectionIndex == index ? section.color : "" }}
             onClick={() => setActiveSectionIndex(index)}
           >
@@ -149,7 +149,7 @@ export default function Processes() {
             alt={sections[0].image.alt}
           />
         </div>
-        <div className="text-xl mt-10">{sections[activeSectionIndex].description}</div>
+        <div className="text-lg md:text-xl mt-5">{sections[activeSectionIndex].description}</div>
         <div className="mt-5 flex flex-wrap">
           {sections[activeSectionIndex].tags.map((tag, index) => (
             <div key={index} className="px-5 py-1 rounded-full bg-gray-200 w-fit mr-2 mb-3">
