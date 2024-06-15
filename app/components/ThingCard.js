@@ -8,7 +8,7 @@ export default function ThingCard({ title, description, url, image_url }) {
 
   return (
     <div
-      className="relative hover-filter"
+      className="relative hover-filter cursor-pointer"
       onMouseEnter={() => {
         setIsHovered(true);
       }}

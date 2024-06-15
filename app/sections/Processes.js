@@ -10,7 +10,7 @@ export default function Processes() {
       type: "design",
       color: "#9747FF",
       description: "Passionate on drawing clean UI design and provide easy to use experience",
-      tags: ["Figma"],
+      tags: ["Figma", "UI", "UX", "Responsive Design"],
       image: {
         landscape_src: "/images/processes/design-landscape.png",
         potrait_src: "/images/processes/design-potrait.png",
@@ -32,6 +32,7 @@ export default function Processes() {
         border_color: "#85C5FF",
         background_color: "#E9F5FF",
       },
+      is_horizontal_revert: true,
     },
     {
       title: "Empower",
@@ -48,116 +49,37 @@ export default function Processes() {
       },
     },
   ];
-  const [activeSectionIndex, setActiveSectionIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveSectionIndex((activeSectionIndex + 1) % sections.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [activeSectionIndex, sections.length]);
 
   return (
-    <section className="mx-6 md:mx-10 min-h-screen box-content">
-      {/* Desktop */}
-      <div className="hidden sm:flex my-10 pt-10 flex-row justify-between">
-        <div className="w-[40%] pr-10 mt-20">
-          <h1 className="text-xl">In my daily work, I do</h1>
-          <div className="my-5">
-            {sections.map((section, index) => (
-              <div
-                key={index}
-                className={"cursor-pointer text-5xl font-bold my-6 text-gray-200"}
-                style={{ color: activeSectionIndex == index ? section.color : "" }}
-                onClick={() => setActiveSectionIndex(index)}
-              >
-                {section.title}
-              </div>
-            ))}
-          </div>
-          <div className="text-xl mt-10">{sections[activeSectionIndex].description}</div>
-          <div className="mt-5 flex flex-wrap">
-            {sections[activeSectionIndex].tags.map((tag, index) => (
-              <div key={index} className="px-5 py-1 rounded-full bg-gray-200 w-fit mr-2 mb-3">
-                {tag}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="w-[60%] box-border sm:mt-52 md:mt-32 lg:mt-16 xl:mt-0">
-          {sections.map((section, index) => (
-            <div
-              key={index}
-              className={`mr-10 rounded-lg border absolute transition-opacity duration-500`}
-              style={
-                activeSectionIndex == index
-                  ? {
-                      opacity: 1,
-                      background: section.image.background_color,
-                      borderColor: section.image.border_color,
-                    }
-                  : {
-                      opacity: 0,
-                    }
-              }
-            >
-              <Image width={1024} height={1024} style={{ width: "100%", height: "auto" }} src={section.image.landscape_src} alt={section.image.alt} />
-            </div>
-          ))}
-        </div>
-      </div>
+    <section className="pb-24">
+      {sections.map((section, index) => (
+        <div
+          key={index}
+          className={`mx-6 md:mx-10 my-24 box-content flex justify-evenly items-center ${section.is_horizontal_revert ? "flex-row-reverse" : ""}`}
+        >
+          <div class="w-[40%]">
+            <div class="text-xl text-gray-500">In my daily work, I do</div>
 
-      {/* Mobile */}
-      <div className="sm:hidden mt-10 mb-20 h-full">
-        <h1 className="text-xl">In my daily work, I do</h1>
-        {sections.map((section, index) => (
-          <div
-            key={index}
-            className={`${activeSectionIndex == index ? "" : "hidden"} cursor-pointer text-4xl font-bold mt-1 mb-6 text-gray-200`}
-            style={{ color: activeSectionIndex == index ? section.color : "" }}
-            onClick={() => setActiveSectionIndex(index)}
-          >
-            {section.title}
-          </div>
-        ))}
-
-        {sections.map((section, index) => (
-          <div
-            key={index}
-            className={`mr-6 rounded-lg border absolute transition-opacity duration-500`}
-            style={
-              activeSectionIndex == index
-                ? {
-                    opacity: 1,
-                    background: section.image.background_color,
-                    borderColor: section.image.border_color,
-                  }
-                : {
-                    opacity: 0,
-                  }
-            }
-          >
-            <Image width={1024} height={1024} style={{ width: "100%", height: "auto" }} src={section.image.potrait_src} alt={section.image.alt} />
-          </div>
-        ))}
-        <div className={`rounded-lg border invisible`}>
-          <Image
-            width={1024}
-            height={1024}
-            style={{ width: "100%", height: "auto" }}
-            src={sections[0].image.potrait_src}
-            alt={sections[0].image.alt}
-          />
-        </div>
-        <div className="text-lg md:text-xl mt-5">{sections[activeSectionIndex].description}</div>
-        <div className="mt-5 flex flex-wrap">
-          {sections[activeSectionIndex].tags.map((tag, index) => (
-            <div key={index} className="px-5 py-1 rounded-full bg-gray-200 w-fit mr-2 mb-3">
-              {tag}
+            <h2 class="mt-3 text-5xl font-bold" style={{ color: section.color }}>
+              {section.title}
+            </h2>
+            <p class="mt-5 text-xl">{section.description}</p>
+            <div>
+              {/* Tags */}
+              <div class="mt-5 flex flex-wrap gap-2">
+                {section.tags.map((tag, index) => (
+                  <div key={index} class="px-3 py-1 rounded-full text-sm text-white font-medium opacity-40" style={{ background: section.color }}>
+                    {tag}
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
+          <div class="w-[50%]">
+            <Image src={section.image.landscape_src} width={1024} height={1024} alt="Design"></Image>
+          </div>
         </div>
-      </div>
+      ))}
     </section>
   );
 }
