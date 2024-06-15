@@ -2,7 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import Image from "next/image";
 
-export default async function AboutMe() {
+export default async function Landing() {
   const imageDirectory = path.join(process.cwd(), "/public/images/me");
   const imageFilenames = (await fs.readdir(imageDirectory)).filter((filename) => filename.endsWith(".png"));
   const randomPhotoIndex = Math.floor(Math.random() * imageFilenames.length);

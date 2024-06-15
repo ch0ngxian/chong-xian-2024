@@ -36,10 +36,10 @@ export default function Projects() {
   ];
 
   return (
-    <section className="w-screen">
+    <section className="w-screen" id="projects">
       <h3 className="text-3xl font-medium mb-5 px-6 md:px-10">Projects</h3>
 
-      <div class="flex w-screen box-border overflow-x-scroll overflow-y-hidden px-6 md:px-10 py-36 -mt-36">
+      <div className="flex w-screen box-border overflow-x-scroll overflow-y-hidden px-6 md:px-10 py-36 -mt-36">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}

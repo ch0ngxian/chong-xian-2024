@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import ThingsILove from "./sections/ThingsILove";
-import AboutMe from "./sections/AboutMe";
+import Landing from "./sections/Landing";
 import Projects from "./sections/Projects";
 import Blogs from "./sections/Blogs";
 import Contacts from "./sections/Contacts";
@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <Header />
       <main>
-        <AboutMe />
+        <Landing />
         <Processes />
         <Projects />
         <Blogs />
