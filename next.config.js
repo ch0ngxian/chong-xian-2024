@@ -14,6 +14,18 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "scrumpoker.chongxian.dev",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.jsoner.app",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

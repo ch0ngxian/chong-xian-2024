@@ -4,7 +4,8 @@ import Image from "next/image";
 
 export default async function AboutMe() {
   const imageDirectory = path.join(process.cwd(), "/public/images/me");
-  const imageFilenames = await fs.readdir(imageDirectory);
+  const imageFilenames = (await fs.readdir(imageDirectory)).filter((filename) => filename.endsWith(".png"));
+  const randomPhotoIndex = Math.floor(Math.random() * imageFilenames.length);
 
   return (
     <section className="mx-6 md:mx-10 min-h-screen flex flex-col">
@@ -22,11 +23,11 @@ export default async function AboutMe() {
           <div className="text-right">
             <Image
               className="mb-2"
-              key={imageFilenames[0]}
+              key={imageFilenames[randomPhotoIndex]}
               width={512}
               height={512}
               style={{ width: "100%", height: "auto" }}
-              src={`/images/me/${imageFilenames[0]}`}
+              src={`/images/me/${imageFilenames[randomPhotoIndex]}`}
               alt=""
             />
             <span className="md:text-xl">Random photo of me</span>
