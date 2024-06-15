@@ -51,7 +51,7 @@ export default function Processes() {
   ];
 
   return (
-    <section id="about-me" className="pb-24">
+    <section id="about-me">
       {sections.map((section, index) => (
         <div
           key={index}

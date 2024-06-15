@@ -3,12 +3,12 @@ import "./ProjectCard.css";
 
 import Image from "next/image";
 
-export default function ProjectCard({ title, description, iconUrl, iconBackground, url, imageUrl }) {
+export default function ProjectCard({ title, description, iconUrl, iconBackground, url, imageUrl, videoUrl }) {
   return (
     <div className="hover:scale-105 transition ease-in-out relative glow mr-8 cursor-pointer">
       <a className="flex" href={url} target="_blank">
-        <div className="overflow-hidden rounded-lg border border-gray-200 dark:border-[#333333]">
-          <div className="h-7 w-full bg-white dark:bg-[#111111] flex items-center border-b dark:border-[#333333]">
+        <div className="overflow-hidden rounded-lg border border-gray-200">
+          <div className="h-7 w-full bg-white flex items-center border-b border-gray-200">
             <div className="rounded-full h-2.5 w-2.5 bg-[#FF5F57] ml-3"></div>
             <div className="rounded-full h-2.5 w-2.5 bg-[#FEBC2E] ml-1"></div>
             <div className="rounded-full h-2.5 w-2.5 bg-[#28C840] ml-1"></div>
@@ -24,6 +24,12 @@ export default function ProjectCard({ title, description, iconUrl, iconBackgroun
               ></iframe>
             )}
             {imageUrl && <Image src={imageUrl} alt="" width={512} height={512} className="rounded-b-lg" />}
+            {videoUrl && (
+              <video width="100%" height="100%" autoPlay loop playsInline>
+                <source src={videoUrl} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
 
             <div className="text-white absolute bottom-0 w-full h-2/3 bg-gradient-to-t from-gray-900 to-transparent flex flex-col justify-end p-5 rounded-b-lg">
               <Image
