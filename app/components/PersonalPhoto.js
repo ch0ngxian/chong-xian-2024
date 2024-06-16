@@ -6,7 +6,16 @@ import React, { useEffect, useState } from "react";
 export default function PersonalPhoto({ imageFilenames }) {
   const [photoText, setPhotoText] = useState("Random photo of me");
   const [randomPhotoIndex, setRandomPhotoIndex] = useState(Math.floor(Math.random() * imageFilenames.length));
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 640);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [setIsMobile]);
 
   const photo = React.useMemo(
     () => (
