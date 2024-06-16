@@ -6,19 +6,20 @@ import React, { useState } from "react";
 export default function PersonalPhoto({ imageFilenames }) {
   const [photoText, setPhotoText] = useState("Random photo of me");
   const [randomPhotoIndex, setRandomPhotoIndex] = useState(Math.floor(Math.random() * imageFilenames.length));
+  const isMobile = window.innerWidth < 640;
 
   const photo = React.useMemo(
     () => (
       <Image
-        className="mb-2 px-2"
+        className="mb-2 sm:px-2"
         key={imageFilenames[randomPhotoIndex]}
-        width={285}
-        height={320}
+        width={isMobile ? (285 * 3) / 4 : 285}
+        height={isMobile ? (320 * 3) / 4 : 320}
         src={`/images/me/${imageFilenames[randomPhotoIndex]}`}
         alt="Chong Xian's Photo"
       />
     ),
-    [imageFilenames, randomPhotoIndex]
+    [imageFilenames, randomPhotoIndex, isMobile]
   );
 
   const nextRandomPhotoIndex = () => {
@@ -29,7 +30,7 @@ export default function PersonalPhoto({ imageFilenames }) {
     setRandomPhotoIndex(newIndex);
   };
   return (
-    <div className="text-right select-none">
+    <div className="text-right select-none w-fit">
       {photo}
       <div
         className="flex justify-between items-center px-2 py-1 rounded-full hover:cursor-pointer hover:bg-gray-100"

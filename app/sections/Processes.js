@@ -94,7 +94,7 @@ export default function Processes() {
             <h2 className="mt-3 text-5xl font-bold" style={{ color: section.color }}>
               {section.title}
             </h2>
-            <Image class="mt-10" src={section.image.potrait_src} width={1024} height={1024} alt="Design"></Image>
+            <Image className="mt-10" src={section.image.potrait_src} width={1024} height={1024} alt="Design"></Image>
             <p className="mt-5 text-xl">{section.description}</p>
             <div>
               {/* Tags */}

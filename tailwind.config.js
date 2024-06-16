@@ -5,6 +5,31 @@ module.exports = {
     fontFamily: {
       sans: ["Helvetica Neue"],
     },
+    extend: {
+      animation: {
+        shimmer: "shimmer 8s infinite",
+      },
+      keyframes: {
+        shimmer: {
+          "0%": {
+            "background-position": "calc(-100% - var(--shimmer-width)) 0",
+          },
+          "100%": {
+            "background-position": "calc(100% + var(--shimmer-width)) 0",
+          },
+        },
+      },
+      animation: {
+        gradient: "gradient 8s linear infinite",
+      },
+      keyframes: {
+        gradient: {
+          to: {
+            backgroundPosition: "var(--bg-size) 0",
+          },
+        },
+      },
+    },
   },
   plugins: [],
 };

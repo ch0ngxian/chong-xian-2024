@@ -1,0 +1,36 @@
+.rotating-curved-text {
+  -webkit-animation: spin-text 12s linear infinite;
+  -moz-animation: spin-text 12s linear infinite;
+  animation: spin-text 12s linear infinite;
+}
+
+.curved-text-position {
+  @apply scale-[70%];
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@media (min-width: 640px) {
+  .curved-text-position {
+    @apply scale-100;
+  }
+}
+
+@-moz-keyframes spin-text {
+  100% {
+    -moz-rotate: 360deg;
+  }
+}
+@-webkit-keyframes spin-text {
+  100% {
+    -webkit-rotate: 360deg;
+  }
+}
+@keyframes spin-text {
+  100% {
+    -webkit-rotate: 360deg;
+    rotate: 360deg;
+  }
+}
