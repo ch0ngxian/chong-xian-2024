@@ -53,16 +53,48 @@ export default function Processes() {
   return (
     <section id="about-me">
       {sections.map((section, index) => (
-        <div
-          key={index}
-          className={`mx-6 md:mx-10 py-24 box-content flex justify-evenly items-center ${section.is_horizontal_revert ? "flex-row-reverse" : ""}`}
-        >
-          <div className="w-[40%]">
+        <div key={index}>
+          {/* Desktop */}
+          <div
+            className={`hidden sm:flex mx-6 md:mx-10 py-24 box-content justify-evenly items-center ${
+              section.is_horizontal_revert ? "flex-row-reverse" : ""
+            }`}
+          >
+            <div className="w-[40%]">
+              <div className="text-xl text-gray-500">In my daily work, I do</div>
+
+              <h2 className="mt-3 text-5xl font-bold" style={{ color: section.color }}>
+                {section.title}
+              </h2>
+              <p className="mt-5 text-xl">{section.description}</p>
+              <div>
+                {/* Tags */}
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {section.tags.map((tag, index) => (
+                    <div
+                      key={index}
+                      className="px-3 py-1 rounded-full text-sm text-white font-medium opacity-40"
+                      style={{ background: section.color }}
+                    >
+                      {tag}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="w-[50%]">
+              <Image src={section.image.landscape_src} width={1024} height={1024} alt="Design"></Image>
+            </div>
+          </div>
+
+          {/* Mobile */}
+          <div key={index} className="flex-col sm:hidden mx-6 md:mx-10 py-24 box-content justify-evenly items-center">
             <div className="text-xl text-gray-500">In my daily work, I do</div>
 
             <h2 className="mt-3 text-5xl font-bold" style={{ color: section.color }}>
               {section.title}
             </h2>
+            <Image class="mt-10" src={section.image.potrait_src} width={1024} height={1024} alt="Design"></Image>
             <p className="mt-5 text-xl">{section.description}</p>
             <div>
               {/* Tags */}
@@ -74,9 +106,6 @@ export default function Processes() {
                 ))}
               </div>
             </div>
-          </div>
-          <div className="w-[50%]">
-            <Image src={section.image.landscape_src} width={1024} height={1024} alt="Design"></Image>
           </div>
         </div>
       ))}
