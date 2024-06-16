@@ -5,6 +5,7 @@ import Projects from "./sections/Projects";
 import Blogs from "./sections/Blogs";
 import Contacts from "./sections/Contacts";
 import Processes from "./sections/Processes";
+import Footer from "./sections/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <ThingsILove />
         <Contacts />
       </main>
+      <Footer />
     </div>
   );
 }
