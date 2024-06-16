@@ -1,9 +1,9 @@
 import Image from "next/image";
-import MailIcon from "../components/icon/MailIcon";
-import LinkedinIcon from "../components/icon/LinkedinIcon";
-import FacebookIcon from "../components/icon/FacebookIcon";
-import GithubIcon from "../components/icon/GithubIcon";
-import MediumIcon from "../components/icon/MediumIcon";
+import MailIcon from "../components/icons/MailIcon";
+import LinkedinIcon from "../components/icons/LinkedinIcon";
+import FacebookIcon from "../components/icons/FacebookIcon";
+import GithubIcon from "../components/icons/GithubIcon";
+import MediumIcon from "../components/icons/MediumIcon";
 
 export default async function Contacts() {
   return (

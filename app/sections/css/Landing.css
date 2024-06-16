@@ -1,0 +1,7 @@
+.personal-photo-button:hover .personal-photo-title-text {
+  display: hidden;
+}
+
+.personal-photo-button:hover .personal-photo-refresh-text {
+  display: block;
+}
