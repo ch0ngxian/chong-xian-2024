@@ -67,6 +67,11 @@ export default async function ThingsILove() {
       description: "Loving the tech and the revolution it brings to the world",
       image_url: "/images/things-i-love/tesla.png",
     },
+    {
+      title: "Dune",
+      description: "Nice movie",
+      image_url: "/images/things-i-love/dune.jpg",
+    },
   ];
 
   return (
