@@ -23,7 +23,7 @@ export default function Processes() {
       title: "Develop",
       type: "develop",
       color: "#0085FF",
-      description: "Solve and implement the solution that performance optimised",
+      description: "Solve problems and implement solutions that performance optimised",
       tags: ["Vue.js", "React", "Laravel", "Ruby on Rails", "MySQL", "AWS"],
       image: {
         landscape_src: "/images/processes/develop-landscape.png",
@@ -38,7 +38,7 @@ export default function Processes() {
       title: "Empower",
       type: "empower",
       color: "#E19A0B",
-      description: "Empower the team with the right tools and knowledge",
+      description: "Continuous enhance the product development process, facilitate team learning and growth",
       tags: ["Scrum", "Communication", "Leadership"],
       image: {
         landscape_src: "/images/processes/empower-landscape.png",
