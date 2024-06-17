@@ -25,7 +25,7 @@ export default async function Landing() {
           <div className="label-badge relative">
             <AnimatedGradientText className={"from-[#333333] via-gray-200 to-[#333333]"}>
               <div className="md:text-2xl">
-                Multi-hyphenate <br /> Software Engineers
+                Multi-hyphenate <br /> Software Engineer
               </div>
             </AnimatedGradientText>
 
@@ -45,7 +45,7 @@ export default async function Landing() {
             <div className="flex justify-center label-badge relative w-full">
               <AnimatedGradientText className={"from-[#333333] via-gray-200 to-[#333333]"}>
                 <div className="md:text-2xl">
-                  Multi-hyphenate <br /> Software Engineers
+                  Multi-hyphenate <br /> Software Engineer
                 </div>
               </AnimatedGradientText>
 
