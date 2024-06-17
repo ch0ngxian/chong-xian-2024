@@ -7,9 +7,6 @@ export const metadata = {
   alternates: {
     canonical: "/",
   },
-  openGraph: {
-    images: "/images/share.png",
-  },
 };
 
 export default function RootLayout({ children }) {
