@@ -15,7 +15,7 @@ export default function Projects() {
       iconUrl: "https://www.jsoner.app/favicon.ico",
     },
     {
-      title: "Scrum Poker | Simple Way to Estimate Story Point",
+      title: "Scrum Poker | Simple Way to Story Point",
       description: "Scrum Poker helps to estimate the story point of a task in a more fun and engaging way.",
       url: "https://scrumpoker.chongxian.dev/",
       iconUrl: "https://scrumpoker.chongxian.dev/favicon.ico",
