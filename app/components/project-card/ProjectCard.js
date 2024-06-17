@@ -41,7 +41,7 @@ export default function ProjectCard({ title, description, iconUrl, iconBackgroun
                 alt=""
               />
               <div className="text-lg font-medium mb-2">{title}</div>
-              <div className="text-xs font-light text-gray-400">{description}</div>
+              <div className="text-sm opacity-60">{description}</div>
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <div className="fixed top-0 w-full z-50">
       <header
-        className="flex justify-between px-7 pt-5 pb-20 rounded-lg backdrop-blur-md w-full bg-white bg-opacity-10"
+        className="flex justify-between px-7 pt-5 pb-20 backdrop-blur-md w-full bg-white bg-opacity-10"
         style={{ mask: "linear-gradient(black, black, transparent)" }}
       >
         <Image className="cursor-pointer" onClick={() => scrollToTop()} src="/images/logo.svg" alt="Logo" width={60} height={24} priority />

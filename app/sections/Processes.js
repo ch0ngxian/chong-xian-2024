@@ -73,7 +73,7 @@ export default function Processes() {
                   {section.tags.map((tag, index) => (
                     <div
                       key={index}
-                      className="px-3 py-1 rounded-full text-sm text-white font-medium opacity-40"
+                      className="px-3 py-1 rounded-full text-sm text-white font-medium opacity-40 hover:opacity-100 transition-opacity"
                       style={{ background: section.color }}
                     >
                       {tag}
@@ -100,7 +100,11 @@ export default function Processes() {
               {/* Tags */}
               <div className="mt-5 flex flex-wrap gap-2">
                 {section.tags.map((tag, index) => (
-                  <div key={index} className="px-3 py-1 rounded-full text-sm text-white font-medium opacity-40" style={{ background: section.color }}>
+                  <div
+                    key={index}
+                    className="px-3 py-1 rounded-full text-sm text-white font-medium opacity-40 hover:opacity-100 transition-opacity"
+                    style={{ background: section.color }}
+                  >
                     {tag}
                   </div>
                 ))}

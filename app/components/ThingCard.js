@@ -21,7 +21,7 @@ export default function ThingCard({ title, description, url, image_url }) {
         style={{ opacity: isHovered ? 1 : 0 }}
       >
         <div className="font-medium md:text-lg">{title}</div>
-        {description && <div className="font-light text-sm md:text-base">{description}</div>}
+        {description && <div className="opacity-70 text-sm md:text-base">{description}</div>}
       </div>
 
       <Image key={title} width={512} height={512} style={{ width: "100%", height: "auto" }} src={image_url} alt="" />
