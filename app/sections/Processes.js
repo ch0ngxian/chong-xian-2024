@@ -88,26 +88,31 @@ export default function Processes() {
           </div>
 
           {/* Mobile */}
-          <div key={index} className="flex-col sm:hidden mx-6 md:mx-10 py-24 box-content justify-evenly items-center">
-            <div className="text-xl text-gray-500">In my daily work, I do</div>
+          <div key={index} className="flex-col sm:hidden py-24 box-content justify-evenly items-center">
+            <div className="mx-6">
+              <div className="text-xl text-gray-500">In my daily work, I do</div>
 
-            <h2 className="mt-3 text-5xl font-bold" style={{ color: section.color }}>
-              {section.title}
-            </h2>
+              <h2 className="mt-3 text-5xl font-bold" style={{ color: section.color }}>
+                {section.title}
+              </h2>
+            </div>
+
             <Image className="mt-10" src={section.image.potrait_src} width={1024} height={1024} alt="Design"></Image>
-            <p className="mt-5 text-xl">{section.description}</p>
-            <div>
-              {/* Tags */}
-              <div className="mt-5 flex flex-wrap gap-2">
-                {section.tags.map((tag, index) => (
-                  <div
-                    key={index}
-                    className="px-3 py-1 rounded-full text-sm text-white font-medium opacity-40 hover:opacity-100 transition-opacity"
-                    style={{ background: section.color }}
-                  >
-                    {tag}
-                  </div>
-                ))}
+            <div className="mx-6">
+              <p className="mt-5 text-xl">{section.description}</p>
+              <div>
+                {/* Tags */}
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {section.tags.map((tag, index) => (
+                    <div
+                      key={index}
+                      className="px-3 py-1 rounded-full text-sm text-white font-medium opacity-40 hover:opacity-100 transition-opacity"
+                      style={{ background: section.color }}
+                    >
+                      {tag}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
