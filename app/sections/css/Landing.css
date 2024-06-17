@@ -10,3 +10,18 @@
 .label-badge:hover .label-badge-rotate {
   opacity: 100%;
 }
+
+.label-badge-view {
+  opacity: 0%;
+  animation: fade-in linear;
+  animation-timeline: view();
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}

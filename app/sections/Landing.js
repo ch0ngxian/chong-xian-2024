@@ -40,14 +40,16 @@ export default async function Landing() {
             <PersonalPhoto imageFilenames={imageFilenames} />
           </div>
 
-          <div className="label-badge relative mt-24 w-fit">
+          <div className="flex justify-center label-badge relative mt-24 w-full">
             <AnimatedGradientText className={"from-[#333333] via-gray-200 to-[#333333]"}>
               <div className="md:text-2xl">
                 Multi-hyphenate <br /> Software Engineers
               </div>
             </AnimatedGradientText>
 
-            <CurvedText className={"label-badge-rotate"} text="• Scrum • UI • UX • Vue.js • Ruby on Rails • Laravel • MySQL •  AWS"></CurvedText>
+            <div className="label-badge-view label-badge-rotate">
+              <CurvedText className={""} text="• Scrum • UI • UX • Vue.js • Ruby on Rails • Laravel • MySQL •  AWS"></CurvedText>
+            </div>
           </div>
         </div>
       </div>
