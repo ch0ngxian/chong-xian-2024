@@ -17,8 +17,19 @@ export default async function Landing() {
     <section className="mx-6 md:mx-10 min-h-screen flex flex-col">
       <div className="flex flex-col justify-between grow mt-28 lg:mt-52 mb-12">
         <div className="inline-flex flex-col gap-2">
-          <PullUpWord words="Hi, I am Chong Xian" delay={0.15} className="text-4xl md:text-6xl font-bold text-[#333333]" />
-          <PullUpWord words="I design and develop nice product." delay={0.1} className="mt-3 mb-10 md:mt-auto text-2xl md:text-5xl" />
+          <div className="md:hidden">
+            <PullUpWord words="Hi, I am <br/> Chong Xian" delay={0.15} gap="8px" className="text-4xl md:text-6xl font-bold text-[#333333]" />
+            <div className="mt-5">
+              <PullUpWord words="I design and develop nice product." delay={0.1} gap="8px" className="mt-3 mb-10 md:mt-auto text-2xl md:text-5xl" />
+            </div>
+          </div>
+
+          <div className="hidden md:block">
+            <PullUpWord words="Hi, I am Chong Xian" delay={0.15} className="text-4xl md:text-6xl font-bold text-[#333333]" />
+            <div className="mt-3">
+              <PullUpWord words="I design and develop nice product." delay={0.1} className=" mb-10 md:mt-auto text-2xl md:text-5xl" />
+            </div>
+          </div>
         </div>
 
         {/* Desktop */}
