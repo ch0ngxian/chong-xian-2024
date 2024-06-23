@@ -1,34 +1,34 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export default function PersonalPhoto({ imageFilenames }) {
   const [photoText, setPhotoText] = useState("Random photo of me");
   const [randomPhotoIndex, setRandomPhotoIndex] = useState(Math.floor(Math.random() * imageFilenames.length));
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 640);
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [setIsMobile]);
 
   const photo = React.useMemo(
     () => (
-      <Image
-        className="mb-2 sm:px-2"
-        key={imageFilenames[randomPhotoIndex]}
-        width={isMobile ? (285 * 3) / 4 : 285}
-        height={isMobile ? (320 * 3) / 4 : 320}
-        src={`/images/me/${imageFilenames[randomPhotoIndex]}`}
-        alt="Chong Xian's Photo"
-      />
+      <div>
+        <Image
+          className="md:hidden mb-2 sm:px-2"
+          key={imageFilenames[randomPhotoIndex]}
+          width={(285 * 3) / 4}
+          height={(320 * 3) / 4}
+          src={`/images/me/${imageFilenames[randomPhotoIndex]}`}
+          alt="Chong Xian's Photo"
+        />
+        <Image
+          className="hidden md:block mb-2 sm:px-2"
+          key={imageFilenames[randomPhotoIndex]}
+          width={285}
+          height={320}
+          src={`/images/me/${imageFilenames[randomPhotoIndex]}`}
+          alt="Chong Xian's Photo"
+        />
+      </div>
     ),
-    [imageFilenames, randomPhotoIndex, isMobile]
+    [imageFilenames, randomPhotoIndex]
   );
 
   const nextRandomPhotoIndex = () => {
