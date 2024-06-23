@@ -54,7 +54,9 @@ export default async function Landing() {
         {/* Mobile */}
         <div className="sm:hidden h-1/4">
           <div className="flex justify-end">
-            <PersonalPhoto imageFilenames={imageFilenames} />
+            <BlurIn duration={0.5}>
+              <PersonalPhoto imageFilenames={imageFilenames} />
+            </BlurIn>
           </div>
 
           <div className="invisible">
