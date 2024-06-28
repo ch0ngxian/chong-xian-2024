@@ -50,9 +50,9 @@ export default function Projects() {
     {
       title: "Draw a Line | Easy line graph illustrating tool",
       description: "Get elegant and highly customized line graph in a glance.",
-      url: "https://draw-a-line.vercel.app/",
+      url: "https://draw-a-line.chongxian.dev/",
       imageUrl: "/images/projects/draw-a-line-preview.png",
-      iconUrl: "https://draw-a-line.vercel.app/logo.svg",
+      iconUrl: "https://draw-a-line.chongxian.dev/logo.svg",
       type: "link",
     },
   ];
